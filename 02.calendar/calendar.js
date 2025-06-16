@@ -19,3 +19,8 @@ const endDate = new Date(year, month, 0)
 // 0日目 = 前月末 = 月末日
 
 console.log(startDate,endDate)
+
+const header = `${year}年${month}月`
+console.log(header.padStart(10 + Math.floor(header.length / 2))) // 中央寄せ
+
+console.log('日 月 火 水 木 金 土')
