@@ -1,9 +1,11 @@
+#!/usr/bin/env node
+
 import minimist from "minimist";
 
 const args = minimist(process.argv.slice(2));
 const today = new Date();
 const year = args.y || today.getFullYear();
-const month = args.m || today.getMonth();
+const month = args.m || today.getMonth()+1;
 
 if (year < 1970 || year > 2100) {
   console.log('対応している年は1970年から2100年までです')
@@ -33,4 +35,3 @@ for (let d = 1; d <= endDate.getDate(); d++) {
 }
 if (output !== '') console.log(output)
 
-  
