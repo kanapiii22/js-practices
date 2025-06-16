@@ -24,3 +24,16 @@ const header = `${year}年${month}月`
 console.log(header.padStart(10 + Math.floor(header.length / 2))) // 中央寄せ
 
 console.log('日 月 火 水 木 金 土')
+
+let output = '   '.repeat(startDate.getDay())
+
+for (let d = 1; d <= endDate.getDate(); d++) {
+  const date = new Date(year, month - 1, d)
+  console.log(date)
+  output += String(d).padStart(2, ' ') + ' '
+  if (date.getDay() === 6) {
+    console.log(output)
+    output = ''
+  }
+}
+if (output !== '') console.log(output)
