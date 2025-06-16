@@ -13,3 +13,9 @@ if (year < 1970 || year > 2100) {
 if (month < 1 || month > 12) {
   console.log('月は1〜12の範囲で指定してください')
 }
+
+const startDate = new Date(year, month - 1, 1)
+const endDate = new Date(year, month, 0) 
+// 0日目 = 前月末 = 月末日
+
+console.log(startDate,endDate)
